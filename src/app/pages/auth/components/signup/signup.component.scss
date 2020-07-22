@@ -1,0 +1,41 @@
+h1{
+  margin-top: 180px;
+  font-weight: 500;
+  font-size: 50px;
+  color: #ec7474;
+  margin-bottom: 60px;
+}
+h2{
+
+  font-size: 30px;
+  color: #ec7474;
+  margin-bottom: 60px;
+}
+.signup{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+input{
+  width: 500px;
+  padding: 10px;
+  border:none;
+  border-bottom: solid  #ec7474 3px;
+  margin-bottom: 20px;
+  margin-top: 30px;
+  margin-left:5px;
+  margin-right: auto;
+ outline: none;
+}
+
+button{
+  color: white;
+  background-color:  #ec7474;;
+}
+
+form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
