@@ -6,7 +6,7 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./feed.component.scss']
 })
 export class FeedComponent implements OnInit {
- @Input() posts = [1];
+ @Input() posts = [1, 2, 1, 1, 1, 1];
   constructor() { }
 
   ngOnInit(): void {
