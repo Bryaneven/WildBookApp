@@ -1,1 +1,15 @@
-<p>profil works!</p>
+<div class="page">
+  <div class="menu">
+    <wdb-side-menu></wdb-side-menu>
+  </div>
+  <div class="center">
+    <wdb-profil-info [me]="me" [followList]="followList"
+    [isfollowing]="follow" [user]="user" *ngIf="user && !showPost"></wdb-profil-info>
+    <wdb-post [posts]="posts "[user]="me" *ngIf="posts && user && showPost"></wdb-post>
+    <wdb-feed [posts]="posts" *ngIf="posts "></wdb-feed>
+  </div>
+  <div class="search">
+    <wdb-searchbar></wdb-searchbar>
+  </div>
+
+</div>

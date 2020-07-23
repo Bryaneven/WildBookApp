@@ -1,0 +1,51 @@
+textarea{
+  width: 93%;
+  margin-left: 25px;
+  margin-right: auto;
+  box-shadow:1px 1px 8px #ec7474;
+  border:none;
+  resize: none;
+  height: 105px;
+  border-radius: 3px;
+  font-size: 20px;
+  padding:15px;
+  color: rgb(102, 99, 99);
+}
+.container{
+  margin-top: 50px;
+  margin-bottom: 50px;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  align-items: center;
+}
+textarea:focus{
+  padding:15px;
+  border: solid 1px #ec7474;
+  font-size: 20px;
+  outline: none !important;
+  color: rgb(102, 99, 99);
+}
+textarea::placeholder{
+  color: rgb(102, 99, 99);
+  font-size: 30px;
+  padding-top: 25px;
+
+}
+img{
+  height: 130px;
+  width: 130px;
+  border-radius: 50%;
+  margin-right: 15px;
+}
+.testareacontainer {
+  width: 100%;
+  position: relative;
+}
+button {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+}
+

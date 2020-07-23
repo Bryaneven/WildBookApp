@@ -1,0 +1,20 @@
+.container{
+  width:70%;
+  height: 600px;
+  margin-left: 25%;
+  margin-right: auto;
+  margin-top:250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow:1px 1px 8px #ec7474;
+}
+
+a{
+  text-decoration: none;
+  color: #ec7474 ;
+}
+h1{
+  margin-bottom: 50px;
+}
+

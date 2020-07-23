@@ -3,8 +3,9 @@ import { NgModule } from '@angular/core';
 import {MatButtonModule} from '@angular/material/button';
 import {MatInputModule} from '@angular/material/input';
 import {MatDividerModule} from '@angular/material/divider';
-import { HttpClientModule} from '@angular/common/http';
-
+import { HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
+import {MatSnackBarModule } from '@angular/material/snack-bar';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -22,6 +23,7 @@ import { ChatboxComponent } from './shared/components/chatbox/chatbox.component'
 import { SearchbarComponent } from './shared/components/searchbar/searchbar.component';
 import { FeedComponent } from './shared/components/feed/feed.component';
 import { FormsModule } from '@angular/forms';
+import { JwtInterceptor } from './core/interceptors/jwt.interceptor';
 
 @NgModule({
   declarations: [
@@ -47,9 +49,11 @@ import { FormsModule } from '@angular/forms';
     MatInputModule,
     MatDividerModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    MatSnackBarModule,
+    MatAutocompleteModule
   ],
-  providers: [],
+  providers: [{ provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
