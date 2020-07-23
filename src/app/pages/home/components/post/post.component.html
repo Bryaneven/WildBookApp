@@ -1,8 +1,8 @@
 <div class="container">
-  <img src="https://www.dropbox.com/s/7zlj89m72yw28d1/3.jpg?raw=1">
+  <img [src]="user.pictureUrl" onerror="this.src='assets/user.png'">
 <div class="testareacontainer">
-    <textarea placeholder=" Quoi de neuf aujourd'hui ?" ></textarea>
-  <button mat-button>Envoyer</button>
+    <textarea placeholder=" Quoi de neuf aujourd'hui ?" [(ngModel)]="postToSend" ></textarea>
+  <button mat-button (click)="sendPost()">Envoyer</button>
 </div>
 </div>
 

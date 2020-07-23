@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { User } from 'src/app/shared/models/user.model';
+import { PostService } from 'src/app/shared/services/post.service';
+import { Post } from 'src/app/shared/models/post.model';
 
 @Component({
   selector: 'wdb-post',
@@ -6,10 +9,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./post.component.scss']
 })
 export class PostComponent implements OnInit {
+@Input() user: User;
+@Input() posts: Post[];
+postToSend: string;
+  constructor(private postService: PostService) { }
 
-  constructor() { }
+  ngOnInit(): void {}
 
-  ngOnInit(): void {
+  sendPost(){
+    const post = {content: this.postToSend};
+    this.postService.post(post).subscribe(postfrmsrv => this.posts.unshift(postfrmsrv));
+    this.postToSend = '';
   }
-
 }
