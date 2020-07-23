@@ -18,4 +18,7 @@ export class PostService {
   post(post): Observable<Post>{
     return this.http.post<Post>(`${environment.apiUrl}posts`, post);
   }
+  getMyFeed(){
+    return this.http.get<Post[]>(`${environment.apiUrl}myfeed`);
+  }
 }

@@ -18,7 +18,12 @@ postToSend: string;
 
   sendPost(){
     const post = {content: this.postToSend};
-    this.postService.post(post).subscribe(postfrmsrv => this.posts.unshift(postfrmsrv));
+    this.postService.post(post).subscribe(postfrmsrv => {
+      postfrmsrv.createdBy.firstname = this.user.firstname;
+      postfrmsrv.createdBy.lastname = this.user.lastname;
+      postfrmsrv.createdBy.pictureUrl = this.user.pictureUrl;
+      this.posts.unshift(postfrmsrv);
+    });
     this.postToSend = '';
   }
 }

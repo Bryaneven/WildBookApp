@@ -32,10 +32,12 @@ width:78.5%;
 ;
 }
 p {
-text-align: center;
+
 color:  rgb(102, 99, 99);
 font-size: 20px;
-padding:15px
+padding:15px;
+display: flex;
+align-items: center;
 
 }
  p:hover {
@@ -43,6 +45,15 @@ padding:15px
 
 }
 a{
+  margin-top: 15px;
   text-decoration: none;
   color:  rgb(102, 99, 99);
+}
+img{
+  margin-left: 10px;
+  margin-right: 25px;
+  margin-top:20px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
 }

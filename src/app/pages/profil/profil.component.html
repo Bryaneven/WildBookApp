@@ -5,8 +5,8 @@
   <div class="center">
     <wdb-profil-info [me]="me" [followList]="followList"
     [isfollowing]="follow" [user]="user" *ngIf="user && !showPost"></wdb-profil-info>
-    <wdb-post [posts]="posts "[user]="user" *ngIf="posts && user && showPost"></wdb-post>
-    <wdb-feed [user]="user"[posts]="posts" *ngIf="posts && user"></wdb-feed>
+    <wdb-post [posts]="posts "[user]="me" *ngIf="posts && user && showPost"></wdb-post>
+    <wdb-feed [posts]="posts" *ngIf="posts "></wdb-feed>
   </div>
   <div class="search">
     <wdb-searchbar></wdb-searchbar>

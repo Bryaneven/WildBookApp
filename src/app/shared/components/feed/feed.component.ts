@@ -9,12 +9,9 @@ import { User } from '../../models/user.model';
 })
 export class FeedComponent implements OnInit {
  @Input() posts: Post[];
- @Input() user: User;
   constructor() { }
 
   ngOnInit(): void {
-console.log(this.posts);
-
   }
 
 }

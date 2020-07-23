@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnChanges } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { PostService } from 'src/app/shared/services/post.service';
 import { Post } from 'src/app/shared/models/post.model';
@@ -10,7 +10,7 @@ import { UserService } from 'src/app/shared/services/user.service';
   templateUrl: './profil.component.html',
   styleUrls: ['./profil.component.scss']
 })
-export class ProfilComponent implements OnInit {
+export class ProfilComponent implements OnInit, OnChanges {
  userId: number;
  posts: Post[];
  user: User;
@@ -30,8 +30,12 @@ export class ProfilComponent implements OnInit {
         this.user = user;
         this.userService.getMyFollows().subscribe(follows => {
           this.followList = follows;
-          const equal = follows.find((follow) => follow.id = this.userId );
-          equal ? this.follow = true : this.follow = false;
+          this.followList.map(follow => {
+            if ( follow.id === user.id) {
+              this.showPost = true;
+            }
+          });
+
         });
         this.userService.getme().subscribe(me => {
           this.me = me;
@@ -43,5 +47,17 @@ export class ProfilComponent implements OnInit {
     });
 
   }
+  ngOnChanges(){
 
+    this.userService.getme().subscribe(me => {
+      this.me = me;
+      if (me.id === this.userId){
+        console.log('lol');
+
+        this.showPost = true;
+      }else {
+        this.showPost = false;
+      }
+  });
+  }
 }

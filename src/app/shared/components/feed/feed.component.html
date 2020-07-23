@@ -1,11 +1,11 @@
 <div class="feed">
   <div class="post" *ngFor="let post of posts" class="post">
     <div class="left">
-      <img [src]="user.pictureUrl" onerror="this.src='assets/user.png'">
+      <img [src]="post.createdBy.pictureUrl" onerror="this.src='assets/user.png'">
     </div>
     <div class="right">
       <div class="postinfo">
-        <span class="username">{{user.firstname}} {{user.lastname}} </span>
+        <span class="username">{{post.createdBy.firstname}} {{post.createdBy.lastname}} </span>
         <span class="date">{{post.createdDate |date:'fullDate'}}</span>
       </div>
       <p>

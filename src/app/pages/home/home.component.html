@@ -3,8 +3,8 @@
     <wdb-side-menu></wdb-side-menu>
   </div>
   <div class="center">
-    <wdb-post  [user]="userConnected" *ngIf="userConnected"></wdb-post>
-    <wdb-feed></wdb-feed>
+    <wdb-post [posts]="feed" [user]="userConnected" *ngIf="userConnected"></wdb-post>
+    <wdb-feed [posts]="feed" *ngIf="feed"></wdb-feed>
   </div>
   <div class="search">
     <wdb-searchbar></wdb-searchbar>

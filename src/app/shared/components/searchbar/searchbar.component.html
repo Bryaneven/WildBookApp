@@ -1,9 +1,9 @@
 <div class="search">
   <input name="searchInput" type="text" [(ngModel)]="name" (keyup)="findUsers()" placeholder="Cherche un wilder"
     autofocus (focusout)="clearResults()">
-  <div class="searchResultsContainer" *ngIf="users.length>0">
+  <div class="searchResultsContainer" *ngIf="users?.length>0">
     <div *ngFor="let user of users">
-      <p><a [routerLink]="['/profil/',user.id]">{{user.firstname}} {{user.lastname}}</a></p>
+       <p><img [src]="user.pictureUrl" onerror="this.src='assets/user.png'" ><a [routerLink]="['/profil/',user.id]">{{user.firstname}} {{user.lastname}}</a></p>
 
     </div>
   </div>
