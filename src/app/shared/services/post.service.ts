@@ -21,4 +21,11 @@ export class PostService {
   getMyFeed(){
     return this.http.get<Post[]>(`${environment.apiUrl}myfeed`);
   }
+  getMyLikedPost(){
+    return this.http.get<Post[]>(`${environment.apiUrl}likedposts`);
+  }
+  update(id, post){
+    return this.http.put<Post>(`${environment.apiUrl}posts/${id}`, post);
+
+  }
 }

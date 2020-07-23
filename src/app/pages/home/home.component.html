@@ -4,7 +4,7 @@
   </div>
   <div class="center">
     <wdb-post [posts]="feed" [user]="userConnected" *ngIf="userConnected"></wdb-post>
-    <wdb-feed [posts]="feed" *ngIf="feed"></wdb-feed>
+    <wdb-feed [posts]="feed" *ngIf="feed" [me]="userConnected"></wdb-feed>
   </div>
   <div class="search">
     <wdb-searchbar></wdb-searchbar>

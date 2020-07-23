@@ -5,6 +5,8 @@ export class Post {
   content: string;
   createdDate: Date;
   createdBy: User;
+  liked = false;
+  likesList: User[];
 
   constructor(post: Post){
     Object.assign(this, post);

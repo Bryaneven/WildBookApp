@@ -10,6 +10,9 @@ import { environment } from 'src/environments/environment';
 export class UserService {
 
   constructor(private http: HttpClient) { }
+  getPostLikes(id){
+    return this.http.get<User[]>(`${environment.apiUrl}posts/${id}/likes`);
+  }
 
   findbyName(name): Observable<User[]>{
     return this.http.get<User[]>(environment.apiUrl + 'search?firstname=' + name);
@@ -23,6 +26,7 @@ export class UserService {
   getMyFollows(){
     return this.http.get<User[]>(`${environment.apiUrl}getmyfollows`);
   }
+
 
   update(id, user){
     return this.http.put<User>(`${environment.apiUrl}users/${id}`, user);
