@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { throwError, Observable } from 'rxjs';
-import { catchError } from 'rxjs/operators';
+import { catchError, tap } from 'rxjs/operators';
 import { User } from '../models/user.model';
 
 @Injectable({
@@ -13,8 +13,9 @@ export class AuthService {
 
   constructor(private http: HttpClient) { }
 
-  login(credentials) {
-    return this.http.post(environment.apiUrl + 'login', credentials).pipe(catchError(this.handleError));
+  login(credentials): Observable<any> {
+    return this.http.post<any>(environment.apiUrl + 'login', credentials).pipe(
+      tap((token) => localStorage.setItem('token', token.access_token)), catchError(this.handleError));
   }
 
   signIn(user): Observable<User>{

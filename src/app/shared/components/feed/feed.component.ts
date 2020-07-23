@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'wdb-feed',
@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./feed.component.scss']
 })
 export class FeedComponent implements OnInit {
-
+ @Input() posts = [1];
   constructor() { }
 
   ngOnInit(): void {
