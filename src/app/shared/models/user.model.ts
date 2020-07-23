@@ -6,6 +6,7 @@ export class User {
   password: string;
   registerDate: Date;
   pictureUrl: string;
+  follows: User[];
 
   constructor(user: User){
     Object.assign(this, user);
