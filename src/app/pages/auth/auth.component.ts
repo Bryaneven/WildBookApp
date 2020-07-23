@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/shared/services/auth.service';
 
 @Component({
   selector: 'wdb-auth',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AuthComponent implements OnInit {
 
-  constructor() { }
+  constructor(private authService: AuthService) { }
 
   ngOnInit(): void {
   }
 
+  login(credential){
+    this.authService.login(credential).subscribe((token) =>
+    console.log(token)
+    );
+  }
+
+  signIn(user){
+    this.authService.signIn(user).subscribe((userFrmSrv) => console.log(userFrmSrv));
+  }
 }
