@@ -1,1 +1,8 @@
-<p>post works!</p>
+<div class="container">
+  <img [src]="user.pictureUrl" onerror="this.src='assets/user.png'">
+<div class="testareacontainer">
+    <textarea placeholder=" Quoi de neuf aujourd'hui ?" [(ngModel)]="postToSend" ></textarea>
+  <button mat-button (click)="sendPost()">Envoyer</button>
+</div>
+</div>
+

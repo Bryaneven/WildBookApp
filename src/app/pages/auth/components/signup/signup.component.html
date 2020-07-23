@@ -1,1 +1,14 @@
-<p>signup works!</p>
+<div class ="signup">
+
+  <h1> Créer un compte </h1>
+  <h2> C'est rapide et facile !</h2>
+
+
+    <input type="text" placeholder="Prénom" [(ngModel)]="firstname">
+    <input type="text" placeholder="Nom"[(ngModel)]="lastname">
+    <input type="email" placeholder="Email" [(ngModel)]="email">
+    <input type="password" placeholder="Mot de passe" [(ngModel)]="password">
+    <input type="password" placeholder="Répéter le mot de passe"[(ngModel)]="passwordBis">
+    <button mat-button (click)="onSubmit()">S'enregistrer</button>
+
+</div>

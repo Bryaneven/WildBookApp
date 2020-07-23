@@ -1,1 +1,19 @@
-<p>feed works!</p>
+<div class="feed">
+  <div class="post" *ngFor="let post of posts; let i = index" class="post">
+    <div class="left">
+      <img [src]="post.createdBy.pictureUrl" onerror="this.src='assets/user.png'">
+    </div>
+    <div class="right">
+      <div class="postinfo">
+        <span class="username">{{post.createdBy.firstname}} {{post.createdBy.lastname}} </span>
+        <span class="date">{{post.createdDate |date:'fullDate'}}</span>
+      </div>
+      <p>
+        {{post.content}}
+      </p>
+     <span class="total-like">{{likeTotal[i]}} </span> <img class="like" (click)="like(post,i)" *ngIf="!post.liked" src="https://img.icons8.com/ios/64/000000/thumb-up.png"/>
+      <img class="like" *ngIf="post.liked" (click)="like(post,i)"src="https://img.icons8.com/ios-filled/64/000000/thumb-up.png"/>
+    </div>
+  </div>
+
+</div>

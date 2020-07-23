@@ -1,1 +1,19 @@
-<p>auth works!</p>
+<div class="header">
+  <wdb-login (sendCredentials)="login($event)"></wdb-login>
+</div>
+<div class="page">
+<div class="content">
+  <img src="assets/logo-login.png" alt="bigLogo">
+  <h1>Bienvenue sur WildBook </h1>
+  <p>
+   WildBook est le réseau social officiel de la Wild Code School.<br>
+   Suis l'actualité de tous les campus à chaque instant  <br>
+   Partage tes réussites, tes projets , tes opinions <br>
+   Mais surtout profite du Wild Réseau !
+  </p>
+</div>
+<div class="vertical-divider"></div>
+<div class="signup">
+  <wdb-signup (sendRegistration)="signIn($event)"> </wdb-signup>
+</div>
+</div>

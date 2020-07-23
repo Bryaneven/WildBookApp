@@ -1,1 +1,7 @@
-<p>profil-info works!</p>
+<div class="container">
+  <img [src]="user.pictureUrl" onerror="this.src='assets/user.png'">
+   <h1> {{user.firstname}} {{user.lastname}}</h1>
+   <button mat-button (click)="followOrUnfollow()"> <span *ngIf="!isfollowing">Suivre</span> <span *ngIf="isfollowing">Ne plus suivre</span> </button>
+</div>
+
+
